@@ -3,13 +3,17 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Counter:</h1>
-    <h2 id="count-el">0</h2>
-    <button id="increment-btn" onclick="increment()">COUNT</button>
-    <button id="save-btn" onclick="save()">SAVE!</button>
-    <button id="reset-btn" onclick="reset()">RESET!</button>
-    <button id="clear-save-btn" onclick="clearSaves()">CLEAR SAVES!</button>
-    <p id="save-el">Previous Saves:</p>
+    <div class="container">
+      <h1>Counter</h1>
+      <h2 id="count-el">0</h2>
+      <div class="buttons">
+        <button id="increment-btn" onclick="increment()">COUNT</button>
+        <button id="save-btn" onclick="save()">SAVE</button>
+        <button id="reset-btn" onclick="reset()">RESET</button>
+        <button id="clear-save-btn" onclick="clearSaves()">CLEAR SAVES</button>
+      </div>
+      <p id="save-el">Previous Saves:</p>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
