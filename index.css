@@ -9,41 +9,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 10px; /* Adicionado para evitar cortes em telas menores */
 }
 
 .container {
   background: #2c2c2e; /* Fundo levemente mais claro */
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 40px 30px; /* Ajusta o padding para uma proporção mais equilibrada */
+  gap: 20px; /* Adiciona espaçamento uniforme entre os elementos */
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Distribui os elementos de forma mais harmoniosa */
   align-items: center;
-  width: 90%;
-  max-width: 400px;
+  width: 100%; /* Ajusta para ocupar toda a largura em telas menores */
+  max-width: 600px; /* Aumenta a largura máxima para desktops */
+  box-sizing: border-box; /* Garante que padding seja incluído no tamanho total */
+  border-radius: 20px; /* Arredonda as bordas do "quadrado" */
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 2.2rem; /* Aumenta levemente o tamanho do título */
+  margin-bottom: 10px; /* Ajusta o espaçamento abaixo do título */
   color: #f2f2f7; /* Texto "Counter" branco suave */
   font-weight: 600; /* Peso mais forte para o título */
   letter-spacing: 0.5px; /* Espaçamento sutil entre letras */
 }
 
 h2 {
-  font-size: 3rem;
-  margin: 20px 0;
+  font-size: 3.5rem; /* Aumenta levemente o tamanho do valor */
+  margin: 5px 0; /* Reduz o espaçamento acima e abaixo do valor */
   color: #d1d1d6; /* Valor "0" cinza claro */
   font-weight: 500; /* Peso médio para o valor */
   letter-spacing: 0.3px; /* Espaçamento sutil entre letras */
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  display: grid; /* Altera para grid layout */
+  grid-template-columns: 1fr; /* Botões empilhados por padrão */
+  gap: 20px; /* Aumenta o espaçamento entre os botões */
   margin-bottom: 20px;
 }
 
@@ -61,6 +63,8 @@ button {
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Aplicando a fonte aos botões */
   letter-spacing: 0.3px; /* Espaçamento sutil entre letras */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra leve para melhorar a visibilidade do texto */
+  width: 100%; /* Botões ocupam toda a largura em telas menores */
+  max-width: 200px; /* Limita a largura dos botões em desktops */
 }
 
 button:hover {
@@ -105,10 +109,51 @@ button:hover {
 }
 
 p {
-  font-size: 1rem;
-  color: #8e8e93; /* Texto "Previous Saves" cinza médio */
-  margin-top: 10px;
+  font-size: 1.2rem; /* Aumenta o tamanho do texto "Previous Saves" */
+  color: #f2f2f7; /* Torna o texto mais branco */
+  margin-top: 10px; /* Ajusta o espaçamento entre o contador e "Previous Saves" */
+  margin-bottom: 30px; /* Aumenta o espaçamento antes dos botões */
   text-align: center;
-  font-weight: 400; /* Peso regular para o texto */
-  letter-spacing: 0.2px; /* Espaçamento sutil entre letras */
+  font-weight: 500; /* Torna o texto um pouco mais forte */
+  letter-spacing: 0.3px; /* Ajusta o espaçamento entre letras */
+}
+
+/* Adicionando media queries para telas menores */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem; /* Reduz o tamanho do título */
+  }
+
+  h2 {
+    font-size: 2.5rem; /* Reduz o tamanho do valor */
+  }
+
+  button {
+    padding: 12px 15px; /* Ajusta o padding dos botões */
+    font-size: 0.9rem; /* Reduz o tamanho do texto dos botões */
+  }
+
+  .container {
+    padding: 20px; /* Ajusta o padding da caixa principal */
+    max-width: 100%; /* Ajusta para ocupar toda a largura em telas menores */
+  }
+
+  .buttons {
+    flex-direction: column; /* Empilha os botões em telas menores */
+    gap: 10px; /* Reduz o espaçamento entre botões */
+  }
+
+  button {
+    max-width: 100%; /* Botões ocupam toda a largura em telas menores */
+  }
+}
+
+@media (min-width: 768px) {
+  .buttons {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Organiza os botões em 2 colunas no desktop */
+    gap: 15px; /* Aumenta o espaçamento entre os botões */
+  }
 }
